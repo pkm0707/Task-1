@@ -1,0 +1,64 @@
+1. Write a blog on Difference between HTTP1.1 vs HTTP2 ?
+Ans : HTTP/1.1:
+      a) To understand better, let we assume the situation when you make a request to the server for the flipkart.html page & server responds to you as a resource flipkart.html page.  
+      b) Before sending the request and the response there is a Transmission Control Protocal (TCP) connection established between user/client & server. 
+      c) Again you make a request to the server for new product & the  server gives a response as an  new product. 
+      d) The connection was not lost here after the first request because we add a keep-alive header which is the part of the request so there is an open connection between the server & client/user. 
+      e) There is a persistent connection which means several requests & responses are merged in a single connection. 
+         
+      These are the drawbacks that lead to the creation of HTTP/2: 
+         (*) The first problem is HTTP/1.1 transfer all the requests & responses in the plain text message form. The second one is head of line blocking in which TCP connection is blocked all other requests  
+            until the response does not receive. 
+         (*) All the information related to the header file is repeated in every request.
+
+      HTTP/2: 
+      a) It was developed over the SPDY (which is nothing but speedy) protocol. HTTP/2 works on the binary framing layer instead of textual that converts all the messages in binary format. 
+      b) It works on fully multiplexed that is one TCP connection is used for multiple requests. 
+      c) HTTP/2 uses HPACK (its an algorithm) which is used to split data from header, it compresses the header. 
+      d) The server sends all the other files like CSS & JS without the request of the client using the PUSH frame.
+      
+      Today, all popular browsers like chrome, edge, firefox, brave are already support HTTP/2 technology. In order for your site to load via this HTTP/1.1 protocol. Make sure that SSL (Secure Sockets Layer, 
+      which is nothing but an encrypted layer between the client/user & server) certificate is already installed on your site and ask your hosting provider if your server supports the updated HTTP protocol.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2. Write a blog about objects and its internal representation in Javascript ?
+Ans : a) In JavaScript variables can also contain many values, Objects are variables too. But objects can contain many values.
+      b) Object values are written as name : value
+      c) Object properties can be both primitive values, other objects, and functions.
+         e.g.  let teamperson = {
+                                 firstname : "Virat",
+                                 lastname  : "Kohli",
+                                 age       :  34,
+                                 iplTeam   : "Rcb"
+                                };
+        like wise we can create an object in javascript, if we have to change any of them inside the object, just we can have a code like : teamperson.firstname = "MS" and teamperson.lastname = "Dhoni" and it  
+        will modify in to the object when we go live in VS code and it will be same for all the {key:value}; inside the object and this is the concept for objects in Java script. Here we can use scopes like  
+        let and const and another one scope is there that is Var and it is not used in latest versions, instead of this we use let. then we can assign an objects using this one of its scopes mentioned above in  
+        examples. In this exaples, properties are firstname, lastname, age, iplTeam. the values are virat, kohli, 34, Rcb. Here we can use functions also to call a value and it can be explained in aexample as 
+               let teamperson = {
+                                 firstname : "Virat",
+                                 lastname  : "Kohli",
+                                 age       :  34,
+                                 iplTeam   : "Rcb"
+                                 fullname  : function() {
+                                 return this.firstname + " " + this.lastname;
+                                 }
+                                };
+        this code explains that it will return the full name like Virat Kohli
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------       
+3. Read about IP address, port, HTTP methods, MAC address ?
+Ans : a) IP address is nothing but it is an Internet Protocol (IP) address which is is an unique numerical identifier for every device or network that connects to the internet.
+      b) In our laptop we can see our IP address on terminal by writing a code as ifconfig ( which is used in UBUNTU) because i were using ubuntu os in my laptop and from that command you can also see your      
+         MAC address also. IP address will be like : 246.100.101.236 and MAC address will be like : 1e:a9:1d:74:9f:1b
+      c) Ports is nothing but which is to be unique for each users and it is divided in to three categories which is Well-Known Port Numbers and it is range from : 0 to 1023 , second one is Registered Port  
+         Numbers and it is range from : 1024 to 49151 this is specific to software companies and the third one is Dynamic Port Numbers and it is used by anyone, then it is ranges from : 49152 to 65535
+      d) HTTP Methods are technically said as request methods and their are classified in to 9 types, they are :
+                 (*) GET     -> It requests a representation of the specified resource. Requests using GET should only retrieve data
+                 (*) HEAD    -> It asks for a response identical to a GET request, but without the response body
+                 (*) POST    -> It submits an entity to the specified resource, often causing a change in state or side effects on the server
+                 (*) PUT     -> It replaces all current representations of the target resource with the request payload
+                 (*) DELETE  -> It deletes the specified resource
+                 (*) CONNECT -> It shows a tunnel to the server identified by the target resource
+                 (*) OPTIONS -> It shows the communication options for the target resource
+                 (*) TRACE   -> It gives message loop-back test along the path to the target resource
+                 (*) PATCH   -> It will do partial modifications to a resource
+
